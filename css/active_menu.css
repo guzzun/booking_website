@@ -1,0 +1,146 @@
+/*menu button*/
+.menu-button{
+    height: 35px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.menu-button:after{
+    content: "";
+    background-color: white;
+    height: 4px;
+    width: 70%;
+    position: absolute;
+    top: 5px;
+    transition: .5s ease;
+}
+
+.menu-button:before{
+    content: "";
+    background-color: white;
+    height: 4px;
+    width: 70%;
+    position: absolute;
+    top: 18px;
+    transition: .5s ease;
+}
+
+/* open button */
+.menu-button.open-done{
+    position: fixed;
+    right: 73px;
+    top: 20px;
+    z-index: 1005;
+}
+
+.menu-button.open-done:after{
+    background-color : #F4CD7D;
+    transform: rotate(45deg);
+    left: 17px;
+    top: 33px;
+}
+
+.menu-button.open-done:before{   
+    background-color : #F4CD7D;
+    transform: rotate(-45deg);
+    left: 17px;
+    top: 33px;
+}
+
+/*active_blocks*/
+.menu-block-1{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    background-color: #F4CD7D;
+    transition: 1s;
+    z-index: 1000;
+}
+
+.menu-block-1.open-done{
+    width: 100%;
+}
+
+.menu-block-2{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    background-color: rgb(17, 18, 32);
+    transition: 1s;
+    z-index: 1000;
+
+}
+
+.menu-block-2.open-done{
+    width: 100%;
+}
+
+/*nav bar*/
+
+.active_nav{
+  display: none;
+}
+
+.active_nav.open-done{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1002;
+    display: block;
+}
+
+.active_nav ul li{
+    margin: 8vh 0;
+    list-style-type: none;
+}
+
+.active_nav ul li a{   
+    text-decoration: none;
+    text-align: center;
+    color: #D4DDF1;
+    font-size: 35px;
+    display: block;
+    transform: translateX(50px);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s,
+                .9s opacity,
+                .9s transform;
+}
+
+.active_nav ul li a:hover{
+    color: #F4CD7D;
+}
+
+.active_nav ul li a.open-done{
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Media */
+@media (max-width: 750px)
+{
+    .active_nav ul li a{
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 550px)
+{
+    .menu-button.open-done{
+        right: 53px;
+        top: 15px;
+    }
+
+@media (max-width: 400px)
+{
+    .active_nav ul li a{
+        font-size: 23px;
+    }
+}
